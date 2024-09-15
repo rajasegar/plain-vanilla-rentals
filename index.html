@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Rentals - Plain vanilla style</title>
+  </head>
+  <body>
+
+    <nav-bar></nav-bar>
+
+        <template id="app-template">
+      <div class="container">
+        <nav class="menu">
+          <a  class=" active menu-index" href="#/">
+            <h1>SuperRentals</h1>
+          </a>
+          <div class="links">
+            <a  class=" menu-about" href="#/about">
+              About
+            </a>
+            <a  class=" menu-contact" href="#/getting-in-touch">
+              Contact
+            </a>
+          </div>
+        </nav>
+
+        <div class="body">
+          <x-route path="/">
+            <!-- <x-app-layout></x-app-layout> -->
+            <x-route path="/" exact>
+              <h2>Hom</h2>
+            </x-route>
+            <x-route path="/about" exact>
+              <div class="jumbo">
+                <div class="right tomster"></div>
+                
+                <h2>About Super Rentals</h2>
+                <p>
+                  The Super Rentals website is a delightful project created to explore Ember.
+                  By building a property rental site, we can simultaneously imagine traveling
+                  AND building Ember applications.
+                </p>
+                <a  class=" button" href="/getting-in-touch">Contact Us</a>
+
+              </div>
+
+            </x-route>
+            <x-route path="/getting-in-touch" exact>
+              <div class="jumbo">
+                <div class="right tomster"></div>
+                
+                <h2>Contact Us</h2>
+                <p>
+                  Super Rentals Representatives would love to help you<br>
+                  choose a destination or answer any questions you may have.
+                </p>
+                <address>
+                  Super Rentals HQ
+                  <p>
+                    1212 Test Address Avenue<br>
+                    Testington, OR 97233
+                  </p>
+                  <a href="tel:503.555.1212">+1 (503) 555-1212</a><br>
+                  <a href="mailto:superrentalsrep@plainvanillaweb.com">superrentalsrep@plainvanillaweb.com</a>
+                </address>
+                <a  class=" button" href="#/about">About</a>
+
+              </div>
+              
+            </x-route>
+            <x-route path="*">
+              <h2>Nothing to see here</h2>
+              <a href="#/">Go to the home page</a>
+            </x-route>
+          </x-route>
+        </div>
+      </div>
+    </template>
+    <template id="search-template">
+      <label>
+        <span>Where would you like to stay?</span>
+        <input  class="ember-text-field  light" type="text">
+      </label>
+
+    </template>
+
+    <template id="rental-template">
+      <li><article class="rental">
+          <button class="image " type="button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg" alt="A picture of Grand Old Mansion">
+            <small>View Larger</small>
+          </button>
+
+          <div class="details">
+            <h3>
+              <a  class="" href="/rentals/grand-old-mansion">
+                Grand Old Mansion
+              </a>
+            </h3>
+            <div class="detail owner">
+              <span>Owner:</span> Veruca Salt
+            </div>
+            <div class="detail type">
+              <span>Type:</span> Standalone
+            </div>
+            <div class="detail location">
+              <span>Location:</span> San Francisco
+            </div>
+            <div class="detail bedrooms">
+              <span>Number of bedrooms:</span> 15
+            </div>
+          </div>
+          <div class="map">
+            <img alt="A map of Grand Old Mansion" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-122.4194,37.7749,9/150x150@2x?access_token=undefined" width="150" height="150">
+          </div>
+
+        </article>
+      </li>
+    </template>
+
+    <template id="jumbo-template">
+      <div class="jumbo">
+        <div class="right tomster"></div>
+        
+        <h2>Welcome to Super Rentals!</h2>
+        <p>We hope you find exactly what you're looking for in a place to stay.</p>
+        <a  class="button" href="/about">About Us</a>
+
+      </div>
+
+    </template>
+    <x-app></x-app>
+    
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
